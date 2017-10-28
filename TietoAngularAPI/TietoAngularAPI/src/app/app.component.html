@@ -1,17 +1,46 @@
 
-<div style="text-align:center">
+<div class ="jumbotron" style="text-align:center">
   <h1>
    Tervetuloa {{title}}!
   </h1>
-    <p>Tilausten lukumäärä: {{orderCount}}</p>
+    <!--<p>Tilausten lukumäärä: {{orderCount}}</p>
+    <hr />-->
+
+    <p>Projektien lukumäärä: {{projectCount}}</p>
+    <hr />
+    <p>Henkilöiden lukumäärä: {{personCount}}</p>
     <hr />
 
-    <p><strong>Viimeisimmät tilaajat:</strong></p>
+    <!--<p><strong>Viimeisimmät tilaajat:</strong></p>
     <ul>
         <li *ngFor="let customer of customers">{{customer}}</li>
     </ul>
+    <hr />-->
+
+    <!--<p><strong>Kaikki asiakkaat:</strong></p>
+    <ul>
+        <li *ngFor="let acustomer of acustomers">{{acustomer}}</li>
+    </ul>
+    <hr />-->
+
+    <p><strong>Kaikki henkilöt:</strong></p>
+    <ul class="heroes">
+        <li *ngFor="let henkilo of henkilot" (click)="onSelect(henkilo)">{{henkilo}}</li>
+    </ul>
     <hr />
-    <!--<p>List of Customers: {{allCustomers}}</p>-->
+
+    <p><strong>Projekti status:</strong></p>
+    <ul class="heroes">
+        <li *ngFor="let projekti of projektit" (click)="onSelect(projekti)">{{projekti}}</li>
+    </ul>
+
+
+
+
+    <!--<p><strong>List of Customers:</strong><p> 
+    <ul>
+        <li *ngFor="let customer of customers">{{allCustomers}}</li>
+    </ul>-->
 
 
 

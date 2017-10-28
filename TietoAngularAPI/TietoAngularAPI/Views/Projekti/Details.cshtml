@@ -1,0 +1,49 @@
+﻿@model TietoAngularAPI.ViewModels.SimplyTunnitData
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Projektit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjektiNimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjektiNimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Esimies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Esimies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avattu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avattu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Suljettu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suljettu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Projekti_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

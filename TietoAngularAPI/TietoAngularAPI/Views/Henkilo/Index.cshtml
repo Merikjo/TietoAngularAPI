@@ -1,0 +1,100 @@
+﻿@model IEnumerable<TietoAngularAPI.ViewModels.SimplyTunnitData>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts {
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $(".näytäTunnitPerProjektiNappi").click(function () {
+                //alert("Nappia painettu!");
+                var henkiloId = $(this).data("henkiloid");
+                //var p1 = $(this).parent();
+                //alert(henkiloId);
+
+            $("#tunnit_" + henkiloId).css("display", "table-row");
+
+                var url = "/henkilo/GetTunnit/" + henkiloId;
+                //alert (url);
+                $.ajax(url).done(function (data) {
+                    //alert("Palvelimelta tuli vastaus.");
+
+                    var tunnitData = "";
+                    for (var i = 0; i < data.length; i++) {
+                        tunnitData += (i + 1) + ": " + data[i].Tunti_id + " | " + data[i].ProjektiNimi + " | " +
+                            data[i].Henkilo_id + " | " + data[i].Pvm + " | " + "Tunnit: " +
+                            data[i].ProjektiTunnit + " | " + "Status:" + data[i].Status + " | " + "Avattu:" + data[i].Avattu + "\r\n";
+                    }
+
+                    //alert(tunnitData);
+
+              $("#tunnitText_" + henkiloId).html("<pre>" + tunnitData + "</pre>");
+        });
+    });
+});
+    </script>
+}
+
+<div class="jumbotron">
+    <h2>HENKILÖTIEDOT</h2>
+
+    <p><a href="/Henkilo/CreatePerson" class="w3-btn w3-large">Uusi henkilö</a></p>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Etunimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sukunimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Osoite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esimies)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postinumero)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="#"><span data-henkiloid="@Html.DisplayFor(modelItem => item.Henkilo_id)" class="glyphicon glyphicon-plus näytäTunnitPerProjektiNappi"></span></a>
+                    @Html.DisplayFor(modelItem => item.Etunimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sukunimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Osoite)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Esimies)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postinumero)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Henkilo_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Henkilo_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Henkilo_id })
+                </td>
+            </tr>
+
+            //luodaan alinäkymän tiedot:
+            <tr style="display: none;" id="tunnit_@Html.DisplayFor(modelItem => item.Henkilo_id)">
+                <td id="margin_@Html.DisplayFor(modelItem => item.Henkilo_id)">&nbsp;</td>
+                <td colspan="10" id="tunnitText_@Html.DisplayFor(modelItem => item.Henkilo_id)"><pre>Loading...</pre></td>
+            </tr>
+        }
+
+    </table>
+</div>

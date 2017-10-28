@@ -1,5 +1,12 @@
 webpackJsonp(["styles"],{
 
+/***/ "../../../../../src/Images/koysi.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "koysi.46351d7803eefc16b17a.jpg";
+
+/***/ }),
+
 /***/ "../../../../../src/styles.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35,7 +42,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
+exports.push([module.i, "h1 {\n    color: #369;\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 250%;\n}\n\nh2, h3 {\n    color: #444;\n    font-family: Arial, Helvetica, sans-serif;\n    font-weight: lighter;\n}\n\nbody {\n    margin: 2em;\n    background-image: url(" + __webpack_require__("../../../../../src/Images/koysi.jpg") + ");\n}\n\nbody, input[text], button {\n    color: #888;\n    font-family: Cambria, Georgia;\n}\n\na {\n    cursor: pointer;\n    cursor: hand;\n}\n\nbutton {\n    font-family: Arial;\n    background-color: #eee;\n    border: none;\n    padding: 5px 10px;\n    border-radius: 4px;\n    cursor: pointer;\n    cursor: hand;\n}\n\n    button:hover {\n        background-color: #cfd8dc;\n    }\n\n    button:disabled {\n        background-color: #eee;\n        color: #aaa;\n        cursor: auto;\n    }\n\n/* Navigation link styles */\nnav a {\n    padding: 5px 10px;\n    text-decoration: none;\n    margin-right: 10px;\n    margin-top: 10px;\n    display: inline-block;\n    background-color: #eee;\n    border-radius: 4px;\n}\n\n    nav a:visited, a:link {\n        color: #607D8B;\n    }\n\n    nav a:hover {\n        color: #039be5;\n        background-color: #CFD8DC;\n    }\n\n    nav a.active {\n        color: #039be5;\n    }\n\n/* everywhere else */\n* {\n    font-family: Arial, Helvetica, sans-serif;\n}/* You can add global styles to this file, and also import other style files */\n\n.jumbotron {\n    /*text-align: center;*/\n    text-align: left;\n    border-bottom: 1px solid #e5e5e5;\n    opacity: 0.8;\n    width: 100%;\n    padding: 5px;\n    margin-bottom: 5px;\n    font-size: 14px !important;\n    /*font-weight: 200;*/\n    line-height: 2.1428571435;\n    color: inherit;\n    background-color: #eeeeee;\n}\n\n    .jumbotron h1 {\n        line-height: 1;\n        color: inherit;\n    }\n\n    .jumbotron p {\n        line-height: 1.4;\n    }\n\n.container .jumbotron {\n    border-radius: 6px;\n}\n\n@media screen and (min-width: 768px) {\n    .jumbotron {\n        padding-top: 48px;\n        padding-bottom: 48px;\n    }\n\n    .container .jumbotron {\n        padding-right: 40px;\n        padding-left: 40px;\n    }\n\n    .jumbotron h1 {\n        font-size: 14px;\n    }\n    /* Set padding to keep content from hitting the edges */\n    .body-content {\n        padding-left: 15px;\n        padding-right: 15px;\n    }\n}", ""]);
 
 // exports
 
